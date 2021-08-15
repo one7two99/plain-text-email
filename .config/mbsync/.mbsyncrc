@@ -1,0 +1,31 @@
+#https://isync.sourceforge.io/mbsync.html
+IMAPStore <EMAILADRESS>-remote
+Host outlook.office365.com
+Port 993
+User <EMAILADRESS>
+#PassCmd "pass <EMAILADRESS>"
+Pass <PASSWORD>
+AuthMechs LOGIN
+SSLType IMAPS
+#SSLVersions SSLv3 TLSv1 TLSv1.1 TLSv1.2 TLSv1.3
+SSLVersions TLSv1.2
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore <EMAILADRESS>-local
+Subfolders Verbatim
+Path ~/Maildir/<EMAILADRESS>/
+Inbox ~/Maildir/<EMAILADRESS>/INBOX
+
+Channel <EMAILADRESS>
+Expunge Both
+Master :<EMAILADRESS>-remote:
+Slave :<EMAILADRESS>-local:
+#Patterns * !"[Gmail]/All Mail"
+#Patterns INBOX !"[Gmail]/All Mail"
+Patterns INBOX "Drafts" "Sent Items" "Trash"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+
