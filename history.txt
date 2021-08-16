@@ -80,7 +80,7 @@ sudo apt-get install w3m w3m-imgcat elinks chromium
 #choose a default browser
 #See also: https://askubuntu.com/questions/16621/how-to-set-the-default-browser-from-the-command-line
 sudo update-alternatives --config www-browser
-# chooe w3m
+# choose w3m
 sudo update-alternatives --config x-www-browser
 # choose Chromium
 sudo update-alternatives --config gnome-www-browser
@@ -90,7 +90,10 @@ ls -lah /usr/bin/*-browser /etc/alternatives/*browser
 #Test with
 sensible-browser https://google.com
 
-# TODO
+#Emacs tips
+#http://irfu.cea.fr/Pisp/vianney.lebouteiller/emacs.html
+
+# One day maybe
 ## davmail
 # http://davmail.sourceforge.net/faq.html
 
