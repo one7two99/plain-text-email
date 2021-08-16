@@ -16,8 +16,12 @@ sudo apt full-upgrade
 sudo apt autoremove
 sudo apt-get install mc emacs mlocate git nmap
 sudo apt-get install build-essential autoconf automake 
-sudo apt-get install w3m w3m-img elinks links2
+sudo apt-get install w3m w3m-imgcat ~/.ssh/id_rsa.pubelinks links2
 
+#Create SSH keypair
+ssh-keygen
+#Copy public key (for example to it to github for simple ssh access)
+cat ~/.ssh/id_rsa.pub
 
 -------------------------------------------
 
