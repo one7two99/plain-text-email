@@ -90,3 +90,12 @@ ls -lah /usr/bin/*-browser /etc/alternatives/*browser
 #Test with
 sensible-browser https://google.com
 
+# TODO
+## davmail
+# http://davmail.sourceforge.net/faq.html
+
+## khard und khal
+# https://opensource.com/article/20/1/open-source-calendar
+https://blog.datentraeger.li/?p=615
+
+# vdirsyncer
