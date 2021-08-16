@@ -16,7 +16,6 @@ sudo apt full-upgrade
 sudo apt autoremove
 sudo apt-get install mc emacs mlocate git nmap
 sudo apt-get install build-essential autoconf automake autotools-dev
-sudo apt-get install w3m w3m-imgcat elinks links2 
 
 #configure connection to github
 #Create SSH keypair
@@ -74,4 +73,10 @@ mbsync -a
 #send testmail
 echo "Hello this is sending email using msmtp" | msmtp <MAILADDRESS>
 echo "Body of Testmail" | mail -s "Testmail Subject" <MAILADDRESS>
+
+#setup web browser
+#install some webbrowsers
+sudo apt-get install w3m w3m-imgcat elinks links2 
+#choose a default browser (w3m in my case)
+sudo update-alternatives --config www-browser
 
