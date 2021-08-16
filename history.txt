@@ -31,6 +31,45 @@ git config --global user.email <EMAIL>
 #show git settings
 git config --list --show-origin
 
+#mu4e
+sudo apt-get install libgmime-3.0-0 libgpgme11 libxapian30 xapian-tools \
+  pkg-config libtool libglib2.0-dev libgmime-3.0-dev libxapian-dev gettext \
+  texi2html texinfo
+sudo apt-get install maildir-utils 
+git clone https://github.com/djcb/mu.git
+cd mu
+./autogen.sh 
+sudo make install
+
+#configure user setting
+# copy .configure from github repository to ~/
+# create symlinks for config files
+cd
+ln -s .config/emacs/.emacs .emacs
+ln -s .config/mbsync/.mbsyncrc .mbsyncrc
+ln -s .config/msmtp/.msmtprc .msmtprc
+# edit/finalize config files
+chmod 600 .msmtprc
+chmod 600 .mbsyncrc
+
+# Install tools to receive / send email
+sudo apt-get install isync msmtp
+# msmtp-mta
+#Sync Mail
+mbsync -a
+#Send testmail
+echo "Hello this is sending email using msmtp" | msmtp <MAILADDRESS>
+
+o package 'glib-2.0' found
+No package 'gobject-2.0' found -> gir1.2-glib-2.0
+
+sudo apt-get install libtool glib2-0
+
+No package 'gio-2.0' found
+The following additional packages will be installed:
+  libgmime-3.0-0 libgpgme11 libxapian30 maildir-utils
+Suggested packages:
+  xapian-tools
 
 -------------------------------------------
 
