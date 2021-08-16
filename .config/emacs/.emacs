@@ -1,26 +1,16 @@
-;;org-mode
-;;https://orgmode.org/manual/Installation.html
-;;https://orgmode.org/manual/
-;;git clone https://code.orgmode.org/bzg/org-mode.git
-;;make autoloads
-;;Link to new org-mode version
-(add-to-list 'load-path "~/github/org-mode/lisp")
+;; ~/.emacs - Emacs configuration file
 
 (setq user-full-name "<FULLNAME>"
       user-mail-address "<EMAILADRESS>")
 
-;;Setting up Email
-;; mu --version
-;; mu (mail indexer/searcher) version 1.4.15
-;;git clone https://github.com/djcb/mu.git
-;;sudo ./autogen.sh 
-;;sudo make install
-;;sudo mv /usr/bin/mu /usr/bin/mu.old
-;;sudo cp mu /usr/bin
-;; mu init --my-address=<EMAILADRESS>
-;; mu index
-(add-to-list 'load-path "~/github/mu/mu4e")
 
+;;org-mode
+;;https://orgmode.org/manual/
+(add-to-list 'load-path "/usr/share/emacs/site-lisp/org")
+
+
+;;Setting up mu4e
+(add-to-list 'load-path "/usr/local/share/emacs/site-lisp/mu4e")
 (require 'mu4e)
 
 ;; use mu4e for e-mail in emacs
