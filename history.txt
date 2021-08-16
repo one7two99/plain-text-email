@@ -1,4 +1,17 @@
-  207  apt-get build-dep neomutt
+# Install nano
+#sudo apt-get install nano
+
+#Add testing sources
+sudo nano /etc/apt/sources.list
+#comment out everything and add:
+# Unstable
+# https://www.debian.org/doc/manuals/debian-handbook/apt.de.html#sect.apt-sources.list.testing
+deb https://deb.debian.org/debian unstable main contrib non-free
+deb-src https://deb.debian.org/debian unstable main contrib non-free
+
+
+
+207  apt-get build-dep neomutt
   208  sudo apt-get build-dep neomutt
   212  apt-get build-dep neomutt
   214  sudo apt-get remove neomutt
