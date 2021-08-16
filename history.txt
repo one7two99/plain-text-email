@@ -14,8 +14,8 @@ deb-src https://deb.debian.org/debian unstable main contrib non-free
 sudo apt update
 sudo apt full-upgrade
 sudo apt autoremove
-sudo apt-get mc emacs mlocate git
-sudo apt-get install install-info makeinfo build-essential
+sudo apt-get install mc emacs mlocate git nmap
+sudo apt-get install build-essential autoconf automake 
 sudo apt-get install w3m w3m-img elinks links2
 
 
