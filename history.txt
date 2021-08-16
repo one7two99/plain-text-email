@@ -15,8 +15,8 @@ sudo apt update
 sudo apt full-upgrade
 sudo apt autoremove
 sudo apt-get install mc emacs mlocate git nmap
-sudo apt-get install build-essential autoconf automake 
-sudo apt-get install w3m w3m-imgcat ~/.ssh/id_rsa.pubelinks links2
+sudo apt-get install build-essential autoconf automake autotools-dev
+sudo apt-get install w3m w3m-imgcat elinks links2 
 
 #configure connection to github
 #Create SSH keypair
@@ -31,7 +31,7 @@ git config --global user.email <EMAIL>
 #show git settings
 git config --list --show-origin
 
-#mu4e
+#compile mu4e
 sudo apt-get install libgmime-3.0-0 libgpgme11 libxapian30 xapian-tools \
   pkg-config libtool libglib2.0-dev libgmime-3.0-dev libxapian-dev gettext \
   texi2html texinfo
@@ -40,6 +40,18 @@ git clone https://github.com/djcb/mu.git
 cd mu
 ./autogen.sh 
 sudo make install
+#will install to: /usr/local/share/emacs/site-lisp/
+#add the following lines to ~/.emacs
+(add-to-list 'load-path "/usr/local/share/emacs/site-lisp/mu4e")
+(require 'mu4e)
+
+#compile org-mode
+git clone https://code.orgmode.org/bzg/org-mode.git
+make autoloads
+sudo make install
+#will install to /usr/share/emacs/site-lisp/org
+#add the following lines to ~/.emacs:
+(add-to-list 'load-path "/usr/share/emacs/site-lisp/org")
 
 #configure user setting
 # copy .configure from github repository to ~/
@@ -54,85 +66,12 @@ chmod 600 .mbsyncrc
 
 # Install tools to receive / send email
 sudo apt-get install isync msmtp
-# msmtp-mta
-#Sync Mail
+sudo nano /etc/mail.rc
+  #set mstp as default mailclient
+  set sendmail="/usr/bin/msmtp -t
+#sync Mail from imap-server
 mbsync -a
-#Send testmail
+#send testmail
 echo "Hello this is sending email using msmtp" | msmtp <MAILADDRESS>
+echo "Body of Testmail" | mail -s "Testmail Subject" <MAILADDRESS>
 
-o package 'glib-2.0' found
-No package 'gobject-2.0' found -> gir1.2-glib-2.0
-
-sudo apt-get install libtool glib2-0
-
-No package 'gio-2.0' found
-The following additional packages will be installed:
-  libgmime-3.0-0 libgpgme11 libxapian30 maildir-utils
-Suggested packages:
-  xapian-tools
-
--------------------------------------------
-
-207  apt-get build-dep neomutt
-  208  sudo apt-get build-dep neomutt
-  212  apt-get build-dep neomutt
-  214  sudo apt-get remove neomutt
-  221  apt-cache search xsltproc
-  222  apt-get install xsltproc
-  223  sudo apt-get install xsltproc
-  225  sudo apt-get install xsltproc xmlcatalog
-  226  apt-cache search xmlcatalog
-  227  sudo apt-get install libxml2-utils
-  230  sudo apt-get install libxml2-utils msgfmt msgmerge xgettext
-  231  apt-cache search gettext
-  232  sudo apt-get install gettext
-  234  apt-cache search ncursesw
-  235  sudo apt-get install libncursesw6
-  236  apt-cache search ncursesw5
-  237  sudo apt-get install libncursesw6 libncursesw5
-  239  apt-cache search ncursesw
-  240  sudo apt-get install libncurses-dev - developer's libraries for ncurses
-  241  sudo apt-get install libncurses-dev
-  243  apt-cache search libidn
-  244  sudo apt-get install idn
-  246  apt-cache search libidn
-  247  sudo apt-get install idn libidn11 libidn2-0
-  248  sudo apt-get install idn libidn11 libidn2-0-dev
-  250  sudo apt-get install mutt
-  256  sudo apt-get install mutt
-  261  sudo apt-get remove mutt
-  262  sudo apt-get install neomutt
-  263  nano /etc/apt/sources.list
-  266  sudo apt-get install mu
-  267  sudo apt-get install emacs
-  268  sudo apt-cache search emacs
-  269  sudo apt-cache search org-mode
-  270  sudo apt-get install emacs
-  271  sudo apt-get install libgmime-3.9-dev libxapian-dev guile-2.2-dev html2text xdg-utils libwebkitgtk-3.0-dev
-  272  sudo apt-get install libgmime-3.0-dev libxapian-dev guile-2.2-dev html2text xdg-utils libwebkitgtk-3.0-dev
-  273  sudo apt-get install libgmime-3.0-dev libxapian-dev guile-2.2-dev html2text xdg-utils
-  311  apt-cache search mu
-  312  apt-cache search mu | grep mail
-  313  apt-cache search mu4e
-  314  sudo apt-get install mu4e
-  358  sudo apt-get install thunderbird mozilla-firefox
-  359  sudo apt-get install thunderbird chromium
-  398  cat /etc/apt/sources.list
-  399  history | grep apt
-  512  sudo apt-get install msmtp msmtp-mta mailutils
-  664  sudo apt-get install w3m w3m-img elinks link2
-  665  sudo apt-get install w3m w3m-img elinks links2
-  667  sudo apt-get install mlocate
-  702  apt-cache search mu
-  703  apt-cache search mu4e
-  706  sudo apt-get install libgmime-3.0-dev libxapian-dev
-  763  sudo apt-get update
-  853  sudo apt-cache search magick
-  854  sudo apt-get install imagemagick
-  863  sudo apt-get install find install rm install-info makeinfo texi2pdf sudo git
-  864  sudo apt-get install build-essential
- 1061  cat /etc/apt/sources.list
- 1078  apt-get remove neomutt mutt
- 1079  sudo apt-get remove neomutt mutt
- 1081  history | grep apt
- 1082  history | grep apt > history.txt
