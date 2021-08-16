@@ -9,7 +9,17 @@ sudo nano /etc/apt/sources.list
 deb https://deb.debian.org/debian unstable main contrib non-free
 deb-src https://deb.debian.org/debian unstable main contrib non-free
 
+#upgrade everything
+#this will download ~245MBm upgrade 433 and install 71 new packages
+sudo apt update
+sudo apt full-upgrade
+sudo apt autoremove
+sudo apt-get mc emacs mlocate git
+sudo apt-get install install-info makeinfo build-essential
+sudo apt-get install w3m w3m-img elinks links2
 
+
+-------------------------------------------
 
 207  apt-get build-dep neomutt
   208  sudo apt-get build-dep neomutt
