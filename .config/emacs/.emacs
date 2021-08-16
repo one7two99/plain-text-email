@@ -1,5 +1,9 @@
 ;; ~/.emacs - Emacs configuration file
 
+;;disable splash screen and startup message
+(setq inhibit-startup-message t)
+(setq initial-scratch-message nil)
+
 (setq user-full-name "<FULLNAME>"
       user-mail-address "<EMAILADRESS>")
 
