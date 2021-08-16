@@ -76,34 +76,17 @@ echo "Body of Testmail" | mail -s "Testmail Subject" <MAILADDRESS>
 
 #setup web browser
 #install some webbrowsers
-sudo apt-get install w3m w3m-imgcat elinks links2 
-#choose a default browser (w3m in my case)
+sudo apt-get install w3m w3m-imgcat elinks chromium
+#choose a default browser
 #See also: https://askubuntu.com/questions/16621/how-to-set-the-default-browser-from-the-command-line
-#sudo update-alternatives --config www-browser
-#sudo update-alternatives --config x-www-browser
-#sudo update-alternatives --config gnome-www-browser
-
-ls -lah /usr/bin/*-browser
-  /usr/bin/gnome-www-browser -> /etc/alternatives/gnome-www-browser
-  /usr/bin/sensible-browser
-  /usr/bin/www-browser -> /etc/alternatives/www-browser
-  /usr/bin/x-www-browser -> /etc/alternatives/x-www-browser
-
-ls -lah /etc/alternatives/*browser
-  /etc/alternatives/gnome-www-browser -> /usr/bin/garcon-url-handler
-  /etc/alternatives/www-browser -> /usr/bin/w3m
-  /etc/alternatives/x-www-browser -> /usr/bin/garcon-url-handler
-
-#set w3m as default browser:
-sudo rm /etc/alternatives/www-browser
-sudo ln -s /usr/bin/w3m /etc/alternatives/www-browser
-sudo rm /etc/alternatives/x-www-browser
-sudo ln -s /usr/bin/w3m /etc/alternatives/x-www-browser
-sudo rm /etc/alternatives/gnome-www-browser
-sudo ln -s /usr/bin/w3m /etc/alternatives/gnome-www-browser
-
-
-
+sudo update-alternatives --config www-browser
+# chooe w3m
+sudo update-alternatives --config x-www-browser
+# choose Chromium
+sudo update-alternatives --config gnome-www-browser
+# choose Chromium
+# See default browsers:
+ls -lah /usr/bin/*-browser /etc/alternatives/*browser
 #Test with
 sensible-browser https://google.com
 
