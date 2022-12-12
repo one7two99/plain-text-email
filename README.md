@@ -1,4 +1,6 @@
-# chrome-os
+# chrome-os [old / unused]
+
+UPDATE 12/12/22 this repository is not updated anymore, because I'm not using any chrome os device anymore.
 
 Repo for configuration on Debian (Chrome OS Cointainer).
 Mainly to setup Emacs and mu4e for plaintext email.
