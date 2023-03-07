@@ -1,3 +1,4 @@
+```
 # Install nano
 #sudo apt-get install nano
 
@@ -105,3 +106,4 @@ sensible-browser https://google.com
 https://blog.datentraeger.li/?p=615
 
 # vdirsyncer
+```
