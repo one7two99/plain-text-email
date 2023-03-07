@@ -1,3 +1,12 @@
+Plain Text Email
+================
+This repository contains notes and config how to setup/use plain text email clients like mu4e.
+
+Status:
+03/2023 just a draft with different config notes, needs some cleanup.
+
+Installation Notes
+------------------
 ```
 # Install nano
 #sudo apt-get install nano
